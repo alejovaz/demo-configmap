@@ -14,7 +14,7 @@ kubectl create cm cm-vars-prueba --from-env-file=vars.txt
 3. Hago el siguiente deploy para "montar" el configmap como archivos en el directorio
    /opt/vars/
 
-`apiVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: alpine
@@ -42,7 +42,7 @@ spec:
       volumes:
         - name: volumen-config-map
           configMap:\
-            name: cm-vars-prueba`
+            name: cm-vars-prueba
 
 4. Te conectas a algunos de los pods creados y ahí podras ver el contenido de las vars "montadas" como archivos en /opt/vars:
 
