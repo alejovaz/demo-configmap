@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alpine
+spec:
+  selector:
+    matchLabels:
+      app: alpine
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: alpine
+    spec:
+      containers:
+      - name: alpine
+        image: alpine
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "512m"
+        command: ["sleep", "infinity"]
+        volumeMounts:
+        - name: volumen-config-map
+          mountPath: /opt/vars
+      volumes:
+        - name: volumen-config-map
+          configMap:
+            name: cm-vars-prueba

@@ -1,0 +1,4 @@
+USER=prueba
+PASSWD=Pass01
+PATH=/opt/prueba
+SOURCE=www.alejo.cl
