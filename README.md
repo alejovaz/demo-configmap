@@ -41,7 +41,7 @@ spec:
           mountPath: /opt/vars
       volumes:
         - name: volumen-config-map
-          configMap:
+          configMap:\
             name: cm-vars-prueba`
 
 4. Te conectas a algunos de los pods creados y ahí podras ver el contenido de las vars "montadas" como archivos en /opt/vars:
